@@ -4,6 +4,25 @@
   "description": "Anthropic Claude integration for Prometheus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielOnRails/prometheus.git",
+    "directory": "packages/claude"
+  },
+  "author": "Gabriel Dias",
+  "license": "MIT",
+  "keywords": [
+    "prometheus",
+    "claude",
+    "anthropic",
+    "ai"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

@@ -17,24 +17,24 @@ export enum Transport {
   RMQ = 'RMQ',
 }
 
-export interface MessagePattern {
+export interface MessagePatternData {
   cmd: string;
   data?: any;
 }
 
-export interface EventPattern {
+export interface EventPatternData {
   event: string;
   data?: any;
 }
 
 export interface ClientProxy {
   send<TResult = any, TInput = any>(
-    pattern: string | MessagePattern,
+    pattern: string | MessagePatternData,
     data: TInput,
   ): Promise<TResult>;
 
   emit<TResult = any, TInput = any>(
-    pattern: string | EventPattern,
+    pattern: string | EventPatternData,
     data: TInput,
   ): Promise<TResult>;
 }

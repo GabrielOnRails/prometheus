@@ -6,6 +6,21 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielOnRails/prometheus.git"
+  },
+  "author": "Gabriel Dias",
+  "license": "MIT",
+  "keywords": [
+    "framework",
+    "nodejs",
+    "ai",
+    "enterprise",
+    "rag",
+    "claude",
+    "microservices"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",

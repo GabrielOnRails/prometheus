@@ -4,6 +4,24 @@
   "description": "Common utilities and types for Prometheus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielOnRails/prometheus.git",
+    "directory": "packages/common"
+  },
+  "author": "Gabriel Dias",
+  "license": "MIT",
+  "keywords": [
+    "prometheus",
+    "utilities",
+    "types"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

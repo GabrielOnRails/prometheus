@@ -61,7 +61,7 @@ export interface FactoryProvider<T = any> {
   scope?: Scope;
 }
 
-export interface ExistingProvider {
+export interface ExistingProvider<T = any> {
   provide: string | symbol | Type<any>;
   useExisting: string | symbol | Type<any>;
 }

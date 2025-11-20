@@ -4,6 +4,25 @@
   "description": "Queue management for Prometheus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielOnRails/prometheus.git",
+    "directory": "packages/queue"
+  },
+  "author": "Gabriel Dias",
+  "license": "MIT",
+  "keywords": [
+    "prometheus",
+    "queue",
+    "bullmq",
+    "redis"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

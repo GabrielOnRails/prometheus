@@ -24,7 +24,7 @@ export class ClientProxy implements IClientProxy {
     pattern: string | object,
     data: TInput
   ): Promise<TResult> {
-    await this.transporter.emit(pattern, data);
+    await this.transporter.emitEvent(pattern, data);
     return undefined as any;
   }
 

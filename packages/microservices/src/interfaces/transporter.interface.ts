@@ -4,7 +4,7 @@
 export interface Transporter {
   listen(callback: (data: any) => Promise<any>): Promise<void>;
   send(pattern: string | object, data: any): Promise<any>;
-  emit(pattern: string | object, data: any): Promise<void>;
+  emitEvent(pattern: string | object, data: any): Promise<void>;
   close(): Promise<void>;
 }
 

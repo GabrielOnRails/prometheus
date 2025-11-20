@@ -22,7 +22,7 @@ export class PrometheusFactory {
    */
   static async createMicroservice(
     module: Type<any> | DynamicModule,
-    options?: MicroserviceOptions
+    options?: PrometheusTransportOptions
   ): Promise<PrometheusApplication> {
     const app = new PrometheusApplication(module);
     await app.init();
@@ -39,7 +39,7 @@ export interface PrometheusApplicationOptions {
   bodyParser?: boolean | any;
 }
 
-export interface MicroserviceOptions {
+export interface PrometheusTransportOptions {
   transport?: string;
   options?: any;
 }

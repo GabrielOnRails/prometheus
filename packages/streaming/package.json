@@ -4,6 +4,25 @@
   "description": "Streaming and real-time support for Prometheus",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielOnRails/prometheus.git",
+    "directory": "packages/streaming"
+  },
+  "author": "Gabriel Dias",
+  "license": "MIT",
+  "keywords": [
+    "prometheus",
+    "streaming",
+    "websocket",
+    "real-time"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

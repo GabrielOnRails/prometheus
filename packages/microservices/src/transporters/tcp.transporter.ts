@@ -24,8 +24,9 @@ export class TCPTransporter extends EventEmitter implements Transporter {
     return new Promise((resolve, reject) => {
       this.server = net.createServer((socket) => {
         socket.on('data', async (buffer) => {
+          let message: any;
           try {
-            const message = JSON.parse(buffer.toString());
+            message = JSON.parse(buffer.toString());
             const response = await callback(message);
 
             socket.write(JSON.stringify({
@@ -34,11 +35,13 @@ export class TCPTransporter extends EventEmitter implements Transporter {
               error: null,
             }));
           } catch (error: any) {
-            socket.write(JSON.stringify({
-              id: message.id,
-              response: null,
-              error: error.message,
-            }));
+            if (message) {
+              socket.write(JSON.stringify({
+                id: message.id,
+                response: null,
+                error: error.message,
+              }));
+            }
           }
         });
       });
@@ -83,7 +86,7 @@ export class TCPTransporter extends EventEmitter implements Transporter {
   /**
    * Emite evento (fire-and-forget)
    */
-  async emit(pattern: string | object, data: any): Promise<void> {
+  async emitEvent(pattern: string | object, data: any): Promise<void> {
     const client = await this.getClient();
     const id = String(++this.messageId);
     client.write(JSON.stringify({ id, pattern, data, isEvent: true }));
@@ -98,10 +101,10 @@ export class TCPTransporter extends EventEmitter implements Transporter {
     }
 
     return new Promise((resolve, reject) => {
-      this.client = net.createConnection({
-        host: this.options.host,
-        port: this.options.port,
-      });
+      this.client = net.createConnection(
+        this.options.port!,
+        this.options.host!
+      );
 
       this.client.on('connect', () => {
         resolve(this.client!);

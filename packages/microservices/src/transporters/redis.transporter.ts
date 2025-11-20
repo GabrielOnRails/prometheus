@@ -31,8 +31,9 @@ export class RedisTransporter extends EventEmitter implements Transporter {
     this.sub.on('message', async (ch, message) => {
       if (ch !== channel) return;
 
+      let data: any;
       try {
-        const data = JSON.parse(message);
+        data = JSON.parse(message);
         const response = await callback(data);
 
         // Envia resposta se não for evento
@@ -44,7 +45,7 @@ export class RedisTransporter extends EventEmitter implements Transporter {
           }));
         }
       } catch (error: any) {
-        if (data.replyTo) {
+        if (data && data.replyTo) {
           await this.pub!.publish(data.replyTo, JSON.stringify({
             id: data.id,
             response: null,
@@ -107,7 +108,7 @@ export class RedisTransporter extends EventEmitter implements Transporter {
   /**
    * Emite evento (fire-and-forget)
    */
-  async emit(pattern: string | object, data: any): Promise<void> {
+  async emitEvent(pattern: string | object, data: any): Promise<void> {
     if (!this.pub) {
       this.pub = new Redis(this.options);
     }
