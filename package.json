@@ -1,6 +1,6 @@
 {
   "name": "prometheus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Framework Node.js progressivo para aplicações empresariais orientadas a IA",
   "private": true,
   "workspaces": [
