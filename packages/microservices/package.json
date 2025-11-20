@@ -1,0 +1,25 @@
+{
+  "name": "@prometheus/microservices",
+  "version": "0.1.0",
+  "description": "Microservices support for Prometheus",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@prometheus/common": "workspace:*",
+    "@prometheus/core": "workspace:*",
+    "ioredis": "^5.3.2",
+    "nats": "^2.18.0",
+    "kafkajs": "^2.2.4",
+    "amqplib": "^0.10.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/amqplib": "^0.10.4",
+    "typescript": "^5.3.0"
+  }
+}

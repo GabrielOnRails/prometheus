@@ -1,0 +1,22 @@
+{
+  "name": "@prometheus/claude",
+  "version": "0.1.0",
+  "description": "Anthropic Claude integration for Prometheus",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@prometheus/common": "workspace:*",
+    "@prometheus/core": "workspace:*",
+    "@anthropic-ai/sdk": "^0.30.0",
+    "tiktoken": "^1.0.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}

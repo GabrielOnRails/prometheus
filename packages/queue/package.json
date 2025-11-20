@@ -1,0 +1,22 @@
+{
+  "name": "@prometheus/queue",
+  "version": "0.1.0",
+  "description": "Queue management for Prometheus",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@prometheus/common": "workspace:*",
+    "@prometheus/core": "workspace:*",
+    "bullmq": "^5.0.0",
+    "ioredis": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  }
+}

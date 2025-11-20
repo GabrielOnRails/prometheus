@@ -1,0 +1,28 @@
+{
+  "name": "@prometheus/rag",
+  "version": "0.1.0",
+  "description": "RAG (Retrieval-Augmented Generation) system for Prometheus",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@prometheus/common": "workspace:*",
+    "@prometheus/core": "workspace:*",
+    "@prometheus/claude": "workspace:*",
+    "@pinecone-database/pinecone": "^2.0.0",
+    "@qdrant/js-client-rest": "^1.7.0",
+    "openai": "^4.20.0",
+    "pdf-parse": "^1.1.1",
+    "mammoth": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/pdf-parse": "^1.1.4",
+    "typescript": "^5.3.0"
+  }
+}
